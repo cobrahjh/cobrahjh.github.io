@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Architect - Project Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--surface:#12121a;--border:#1e1e2e;--text:#e0e0e8;--text-dim:#7a7a8e;--accent:#6c5ce7;--accent-glow:rgba(108,92,231,0.25);--green:#00e676;--green-dim:rgba(0,230,118,0.15);--orange:#ff9100;--orange-dim:rgba(255,145,0,0.15);--blue:#448aff;--blue-dim:rgba(68,138,255,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,sans-serif;line-height:1.6;overflow-x:hidden}
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(108,92,231,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(108,92,231,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0;pointer-events:none}
+.content{position:relative;z-index:1}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;position:relative}
+.hero::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+.hero-badge{font-family:"JetBrains Mono",monospace;font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:.3em;margin-bottom:1.5rem;padding:.4rem 1.2rem;border:1px solid rgba(108,92,231,0.3);border-radius:100px;background:rgba(108,92,231,0.05)}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:1rem;background:linear-gradient(135deg,#fff 0%,#a29bfe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text-dim);font-size:1.15rem;max-width:560px;margin-bottom:2.5rem}
+.hero-stats{display:flex;gap:3rem;margin-top:1rem}
+.stat{text-align:center}
+.stat-value{font-family:"JetBrains Mono",monospace;font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.15em}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--text-dim);font-size:.8rem;animation:pulse 2s ease-in-out infinite}
+.scroll-hint svg{display:block;margin:.5rem auto 0}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.3em;margin-bottom:.75rem}
+.section-title{font-size:2rem;font-weight:700;margin-bottom:3rem}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s ease;position:relative;overflow:hidden}
+.project-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+.project-card:hover{border-color:rgba(108,92,231,0.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.project-card.flagship::before{background:linear-gradient(90deg,var(--accent),var(--blue))}
+.project-card.active::before{background:linear-gradient(90deg,var(--green),#69f0ae)}
+.project-card.tool::before{background:linear-gradient(90deg,var(--orange),#ffab40)}
+.project-card.experiment::before{background:linear-gradient(90deg,#ff5252,#ff8a80)}
+.project-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.project-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.flagship .project-icon{background:var(--accent-glow)}
+.active .project-icon{background:var(--green-dim)}
+.tool .project-icon{background:var(--orange-dim)}
+.experiment .project-icon{background:var(--blue-dim)}
+.project-name{font-size:1.15rem;font-weight:700}
+.project-status{font-family:"JetBrains Mono",monospace;font-size:.65rem;padding:.2rem .6rem;border-radius:100px;text-transform:uppercase;letter-spacing:.1em;margin-left:auto}
+.status-live{background:var(--green-dim);color:var(--green)}
+.status-dev{background:var(--orange-dim);color:var(--orange)}
+.status-beta{background:var(--blue-dim);color:var(--blue)}
+.project-desc{color:var(--text-dim);font-size:.9rem;margin-bottom:1.25rem;line-height:1.7}
+.project-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-family:"JetBrains Mono",monospace;font-size:.65rem;color:var(--text-dim);background:rgba(255,255,255,0.04);padding:.25rem .65rem;border-radius:6px;border:1px solid rgba(255,255,255,0.06)}
+.arch-diagram{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-top:2rem}
+.arch-title{font-family:"JetBrains Mono",monospace;font-size:.85rem;color:var(--accent);margin-bottom:1.5rem}
+.arch-nodes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.arch-node{background:rgba(255,255,255,0.02);border:1px dashed var(--border);border-radius:10px;padding:1.2rem;text-align:center}
+.node-name{font-family:"JetBrains Mono",monospace;font-size:.8rem;font-weight:700;margin-bottom:.3rem}
+.node-id{font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--text-dim)}
+.node-role{font-size:.75rem;color:var(--accent);margin-top:.5rem}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2rem}
+.tech-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;transition:border-color .2s}
+.tech-item:hover{border-color:rgba(108,92,231,0.3)}
+.tech-name{font-size:.85rem;font-weight:600;margin-bottom:.2rem}
+.tech-use{font-size:.7rem;color:var(--text-dim)}
+footer{text-align:center;padding:4rem 2rem;border-top:1px solid var(--border)}
+footer p{color:var(--text-dim);font-size:.85rem}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:1rem}
+@media(max-width:640px){.hero-stats{gap:1.5rem}.projects-grid{grid-template-columns:1fr}.arch-nodes{grid-template-columns:1fr 1fr}section{padding:3rem 1.25rem}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="content">
+<header class="hero">
+<div class="hero-badge">Master Architect</div>
+<h1>Building Autonomous<br>Distributed Systems</h1>
+<p>Distributed AI orchestration, flight simulation control, and autonomous multi-machine systems &mdash; designed to self-heal, self-discover, and evolve.</p>
+<div class="hero-stats">
+<div class="stat"><div class="stat-value">4</div><div class="stat-label">Network Nodes</div></div>
+<div class="stat"><div class="stat-value">7+</div><div class="stat-label">Active Projects</div></div>
+<div class="stat"><div class="stat-value">&infin;</div><div class="stat-label">Uptime Goal</div></div>
+</div>
+<div class="scroll-hint">Explore projects<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+</header>
+
+<section>
+<div class="section-label">// Flagship</div>
+<h2 class="section-title">Core Systems</h2>
+<div class="projects-grid">
+
+<div class="project-card flagship">
+<div class="project-header"><div class="project-icon">&#x1F41D;</div><div class="project-name">Hive</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Autonomous AI orchestration system spanning a 4-node network. Self-healing, self-discovering, immortal. Event mesh on port 8750 &mdash; no polling, no manual starts. Auto-boots via Genesis Protocol when no environment is detected.</p>
+<div class="project-tags"><span class="tag">Node.js</span><span class="tag">Event Mesh</span><span class="tag">Auto-Discovery</span><span class="tag">WinRM</span><span class="tag">SSH</span></div>
+</div>
+
+<div class="project-card flagship">
+<div class="project-header"><div class="project-icon">&#x2708;&#xFE0F;</div><div class="project-name">SimWidget Engine</div><span class="project-status status-dev">Active Dev</span></div>
+<p class="project-desc">Flight simulator control system for MSFS 2024. Multi-bridge architecture with SimConnect integration, ATC navigation for AI flight bots, and real-time aircraft control interfaces.</p>
+<div class="project-tags"><span class="tag">SimConnect</span><span class="tag">MSFS 2024</span><span class="tag">ATC</span><span class="tag">Multi-Bridge</span></div>
+</div>
+
+<div class="project-card active">
+<div class="project-header"><div class="project-icon">&#x1F3B5;</div><div class="project-name">GridJam</div><span class="project-status status-beta">Beta</span></div>
+<p class="project-desc">Network-aware music collaboration tool that embraces latency instead of fighting it. Beat-grid quantization ensures everything stays in sync regardless of network conditions.</p>
+<div class="project-tags"><span class="tag">Web Audio</span><span class="tag">Beat Quantization</span><span class="tag">Real-Time</span><span class="tag">Collaboration</span></div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="section-label">// Infrastructure</div>
+<h2 class="section-title">Tools &amp; Systems</h2>
+<div class="projects-grid">
+
+<div class="project-card tool">
+<div class="project-header"><div class="project-icon">&#x1F399;&#xFE0F;</div><div class="project-name">Voice Bridge</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Browser-based voice control system using Web Speech API. Connects voice commands directly to Hive for hands-free orchestration and accessibility across the network.</p>
+<div class="project-tags"><span class="tag">Web Speech API</span><span class="tag">Accessibility</span><span class="tag">Voice Control</span></div>
+</div>
+
+<div class="project-card tool">
+<div class="project-header"><div class="project-icon">&#x1F4E6;</div><div class="project-name">Kittbox REM</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Remote Execution Module for authenticated command execution across the network. Secure, fast, and integrated with the Hive event mesh for distributed task management.</p>
+<div class="project-tags"><span class="tag">Remote Exec</span><span class="tag">Auth</span><span class="tag">Network</span></div>
+</div>
+
+<div class="project-card tool">
+<div class="project-header"><div class="project-icon">&#x1F40D;</div><div class="project-name">CobraControl</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Windows automation suite with system tray integration and secure elevation handling. Background services, hotkey triggers, and deep OS integration.</p>
+<div class="project-tags"><span class="tag">Windows</span><span class="tag">System Tray</span><span class="tag">Automation</span></div>
+</div>
+
+<div class="project-card experiment">
+<div class="project-header"><div class="project-icon">&#x1F9E0;</div><div class="project-name">LLM Router</div><span class="project-status status-dev">Active Dev</span></div>
+<p class="project-desc">Intelligent multi-provider LLM routing service. Integrates Gemini, Claude, and other APIs with smart fallback, load balancing, and cost optimization across the Hive network.</p>
+<div class="project-tags"><span class="tag">Gemini</span><span class="tag">Claude API</span><span class="tag">Routing</span><span class="tag">Multi-Provider</span></div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="section-label">// Network</div>
+<h2 class="section-title">Architecture</h2>
+<div class="arch-diagram">
+<div class="arch-title">$ hive network --status</div>
+<div class="arch-nodes">
+<div class="arch-node"><div class="node-name">Commander-PC</div><div class="node-id">Node Alpha</div><div class="node-role">Primary / Command</div></div>
+<div class="arch-node"><div class="node-name">Morpu-PC</div><div class="node-id">Node Bravo</div><div class="node-role">Compute Node</div></div>
+<div class="arch-node"><div class="node-name">AI-PC</div><div class="node-id">Node Charlie</div><div class="node-role">AI / Inference</div></div>
+<div class="arch-node"><div class="node-name">Rock-PC</div><div class="node-id">Node Delta</div><div class="node-role">Services Node</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="section-label">// Stack</div>
+<h2 class="section-title">Technologies</h2>
+<div class="tech-grid">
+<div class="tech-item"><div class="tech-name">Node.js</div><div class="tech-use">Core Runtime</div></div>
+<div class="tech-item"><div class="tech-name">Python</div><div class="tech-use">Automation</div></div>
+<div class="tech-item"><div class="tech-name">SimConnect</div><div class="tech-use">MSFS Bridge</div></div>
+<div class="tech-item"><div class="tech-name">WinRM / SSH</div><div class="tech-use">Remote Mgmt</div></div>
+<div class="tech-item"><div class="tech-name">Web Speech API</div><div class="tech-use">Voice Control</div></div>
+<div class="tech-item"><div class="tech-name">LLM APIs</div><div class="tech-use">AI Integration</div></div>
+<div class="tech-item"><div class="tech-name">Web Audio</div><div class="tech-use">GridJam Engine</div></div>
+<div class="tech-item"><div class="tech-name">Windows APIs</div><div class="tech-use">OS Integration</div></div>
+</div>
+</section>
+
+<footer>
+<p>Built by <strong>Master Architect</strong> &mdash; systems that never sleep.</p>
+<div class="footer-links"><a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a></div>
+</footer>
+</div>
+<script>
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.style.opacity="1";entry.target.style.transform="translateY(0)"}})},{threshold:0.1});
+document.querySelectorAll(".project-card,.arch-diagram,.tech-item").forEach(function(el){el.style.opacity="0";el.style.transform="translateY(20px)";el.style.transition="opacity 0.6s ease, transform 0.6s ease";observer.observe(el)});
+</script>
+</body>
+</html>
