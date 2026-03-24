@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King_Cobra74 — Viewer Commands</title>
+<style>
+  :root {
+    --bg: #0e0e10; --surface: #18181b; --border: #303032;
+    --text: #efeff1; --muted: #adadb8; --accent: #9147ff;
+    --green: #00e676; --red: #f44336; --yellow: #ffc107; --cyan: #00e5ff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem; max-width:1100px; margin:0 auto; }
+
+  h1 { font-size:2rem; margin-bottom:0.3rem; }
+  h1 span { color:var(--accent); }
+  .subtitle { color:var(--muted); font-size:0.9rem; margin-bottom:2rem; }
+  h2 { font-size:1.3rem; margin:2rem 0 0.8rem; padding-bottom:6px; border-bottom:1px solid var(--border); color:var(--cyan); }
+  h3 { font-size:1rem; margin:1.2rem 0 0.5rem; color:var(--accent); }
+
+  .nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:2rem; padding:12px; background:var(--surface); border-radius:8px; border:1px solid var(--border); }
+  .nav a { color:var(--accent); text-decoration:none; font-size:0.82rem; padding:4px 10px; border-radius:4px; background:rgba(145,71,255,0.1); }
+  .nav a:hover { background:rgba(145,71,255,0.25); }
+
+  table { width:100%; border-collapse:collapse; margin:0.5rem 0 1.5rem; font-size:0.85rem; }
+  th { text-align:left; padding:8px 10px; background:var(--surface); border:1px solid var(--border); color:var(--cyan); font-weight:600; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; }
+  td { padding:6px 10px; border:1px solid var(--border); vertical-align:top; }
+  tr:hover td { background:rgba(255,255,255,0.02); }
+  code { background:rgba(145,71,255,0.15); color:#d4b4ff; padding:1px 5px; border-radius:3px; font-size:0.85em; }
+
+  .info { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:0.8rem 0; font-size:0.85rem; }
+  .info.tip { border-color:var(--green); background:rgba(0,230,118,0.05); }
+  .info strong { color:var(--cyan); }
+  .footer { color:var(--muted); text-align:center; margin-top:2.5rem; font-size:0.8rem; }
+
+  @media print { body { background:#fff; color:#000; } th { background:#eee; } .nav { display:none; } }
+</style>
+</head>
+<body>
+
+<h1><span>&#127918;</span> King_Cobra74 — Viewer Commands</h1>
+<p class="subtitle">Everything you can do in chat &mdash; flight controls, AI copilot, music requests, and more.</p>
+
+<div class="nav">
+  <a href="#general">General</a>
+  <a href="#flight-controls">Flight Controls</a>
+  <a href="#sim-commands">Quick Sim</a>
+  <a href="#camera">Camera</a>
+  <a href="#tts-ai">TTS & AI</a>
+  <a href="#music">Music</a>
+  <a href="#routes">Routes</a>
+  <a href="#keywords">Keywords</a>
+  <a href="#bot-features">Bot Features</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="general">General Commands</h2>
+<p>Info and social commands available to everyone.</p>
+
+<table>
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td><code>!commands</code></td><td>List all available commands</td></tr>
+  <tr><td><code>!planestatus</code></td><td>Current heading, altitude, speed, control status</td></tr>
+  <tr><td><code>!planehelp</code></td><td>List all flight control commands</td></tr>
+  <tr><td><code>!flightdata</code></td><td>Live flight data with AI narration</td></tr>
+  <tr><td><code>!autopilot</code></td><td>Autopilot status with AI narration</td></tr>
+  <tr><td><code>!hive</code></td><td>Show system health (services online/offline)</td></tr>
+  <tr><td><code>!features</code></td><td>Bot capabilities explained in character</td></tr>
+  <tr><td><code>!sim</code></td><td>What game is this + how to control the plane</td></tr>
+  <tr><td><code>!discord</code></td><td>Discord invite link</td></tr>
+  <tr><td><code>!socials</code></td><td>Streamer social links</td></tr>
+  <tr><td><code>!uptime</code></td><td>Stream time info</td></tr>
+  <tr><td><code>!followage</code></td><td>Follow date info</td></tr>
+  <tr><td><code>!lurk</code></td><td>Go lurk mode</td></tr>
+  <tr><td><code>!unlurk</code></td><td>Come back from lurking</td></tr>
+  <tr><td><code>!quote</code></td><td>Random aviation quote</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="flight-controls">Flight Controls</h2>
+<p>Control the aircraft directly from chat! Autopilot, flaps, gear, and lights.</p>
+
+<h3>Autopilot</h3>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Effect</th></tr>
+  <tr><td><code>!ap</code></td><td><code>!ap</code></td><td>Toggle autopilot master</td></tr>
+  <tr><td><code>!ap-on</code></td><td><code>!ap-on</code></td><td>Autopilot ON</td></tr>
+  <tr><td><code>!ap-off</code></td><td><code>!ap-off</code></td><td>Autopilot OFF</td></tr>
+  <tr><td><code>!ap-heading</code></td><td><code>!ap-heading 270</code></td><td>Set heading (0-360) + engage HDG mode</td></tr>
+  <tr><td><code>!heading</code></td><td><code>!heading 270</code></td><td>Set heading bug only (0-360)</td></tr>
+  <tr><td><code>!hdg</code></td><td><code>!hdg</code></td><td>Toggle HDG hold mode</td></tr>
+  <tr><td><code>!ap-altitude</code></td><td><code>!ap-altitude 5000</code></td><td>Set altitude (0-50000) + engage ALT hold</td></tr>
+  <tr><td><code>!set-altitude</code></td><td><code>!set-altitude 5000</code></td><td>Set altitude only (0-50000)</td></tr>
+  <tr><td><code>!ap-altitude-hold</code></td><td><code>!ap-altitude-hold</code></td><td>Toggle ALT hold</td></tr>
+  <tr><td><code>!ap-nav-on</code></td><td><code>!ap-nav-on</code></td><td>NAV mode ON</td></tr>
+  <tr><td><code>!ap-nav-off</code></td><td><code>!ap-nav-off</code></td><td>NAV mode OFF</td></tr>
+</table>
+
+<h3>Flaps & Gear</h3>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Effect</th></tr>
+  <tr><td><code>!flaps</code></td><td><code>!flaps 2</code></td><td>Set flaps (0=up, 1=10, 2=20, 3=full)</td></tr>
+  <tr><td><code>!flaps-up</code></td><td><code>!flaps-up</code></td><td>Retract flaps one notch</td></tr>
+  <tr><td><code>!flaps-down</code></td><td><code>!flaps-down</code></td><td>Extend flaps one notch</td></tr>
+  <tr><td><code>!gear</code></td><td><code>!gear</code> or <code>!gear 1</code></td><td>Toggle landing gear (0=up, 1=down)</td></tr>
+</table>
+
+<h3>Lights</h3>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Effect</th></tr>
+  <tr><td><code>!lights</code></td><td><code>!lights on</code></td><td>All lights on/off</td></tr>
+  <tr><td><code>!beacon</code></td><td><code>!beacon on</code></td><td>Beacon light</td></tr>
+  <tr><td><code>!nav</code></td><td><code>!nav on</code></td><td>Navigation lights</td></tr>
+  <tr><td><code>!landing</code></td><td><code>!landing on</code></td><td>Landing lights</td></tr>
+  <tr><td><code>!strobe</code></td><td><code>!strobe on</code></td><td>Strobe lights</td></tr>
+  <tr><td><code>!taxi</code></td><td><code>!taxi on</code></td><td>Taxi lights</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="sim-commands">Quick Sim Commands</h2>
+<p>Shorthand commands for common flight actions.</p>
+
+<table>
+  <tr><th>Command</th><th>Effect</th></tr>
+  <tr><td><code>!gearup</code> / <code>!geardown</code></td><td>Raise / lower gear</td></tr>
+  <tr><td><code>!flapsup</code> / <code>!flapsdown</code> / <code>!flapsfull</code></td><td>Retract / extend / full flaps</td></tr>
+  <tr><td><code>!fullpower</code></td><td>Throttle to 100%</td></tr>
+  <tr><td><code>!idle</code></td><td>Throttle to 0%</td></tr>
+  <tr><td><code>!throttle 50</code></td><td>Set throttle (0-100%)</td></tr>
+  <tr><td><code>!navlights</code></td><td>Toggle nav lights</td></tr>
+  <tr><td><code>!spoilers</code></td><td>Toggle spoilers</td></tr>
+  <tr><td><code>!apheading 270</code></td><td>Set AP heading + enable HDG</td></tr>
+  <tr><td><code>!apalt 5000</code></td><td>Set AP altitude + enable ALT hold</td></tr>
+  <tr><td><code>!apvs 500</code></td><td>Set vertical speed (-5000 to 5000 fpm)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="camera">Camera Commands</h2>
+<p>Switch the in-game camera view from chat.</p>
+<table>
+  <tr><th>Command</th><th>View</th></tr>
+  <tr><td><code>!cam cockpit</code></td><td>Cockpit view</td></tr>
+  <tr><td><code>!cam external</code></td><td>External view</td></tr>
+  <tr><td><code>!cam drone</code></td><td>Drone camera</td></tr>
+  <tr><td><code>!cam next</code></td><td>Next camera</td></tr>
+  <tr><td><code>!cam prev</code></td><td>Previous camera</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="tts-ai">TTS & AI Copilot</h2>
+<p>Talk to the AI copilot, have text read aloud, or request cinematic narration.</p>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!ask</code></td><td><code>!ask what altitude are we at?</code></td><td>Ask AI copilot a question (spoken via TTS)</td></tr>
+  <tr><td><code>!ask</code></td><td><code>!ask voice:george what's our ETA?</code></td><td>Ask with specific voice</td></tr>
+  <tr><td><code>!ask-voices</code></td><td><code>!ask-voices</code></td><td>Show available AI voices</td></tr>
+  <tr><td><code>!tts</code></td><td><code>!tts hello everyone!</code></td><td>Text-to-speech message</td></tr>
+  <tr><td><code>!tts</code></td><td><code>!tts voice:af_nicole welcome!</code></td><td>TTS with specific voice</td></tr>
+  <tr><td><code>!voices</code></td><td><code>!voices</code></td><td>List available TTS voices</td></tr>
+  <tr><td><code>!copilot</code></td><td><code>!copilot what city is that?</code></td><td>Ask AI copilot about the current flight</td></tr>
+  <tr><td><code>!narrator</code></td><td><code>!narrator</code></td><td>Cinematic narration of current scenery</td></tr>
+  <tr><td><code>!commentarystatus</code></td><td><code>!commentarystatus</code></td><td>Check if AI commentary is ON or OFF</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="music">Music Commands</h2>
+<p>Request songs, control playback, and manage the music queue. Songs play on stream via YouTube.</p>
+
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!play</code></td><td><code>!play lofi hip hop</code></td><td>Search YouTube and play a song (or resume playback)</td></tr>
+  <tr><td><code>!queue</code></td><td><code>!queue chill beats</code></td><td>Search and add a song to the queue</td></tr>
+  <tr><td><code>!sr</code></td><td><code>!sr song name</code></td><td>Song request (alias for !queue)</td></tr>
+  <tr><td><code>!song</code> / <code>!np</code></td><td><code>!song</code></td><td>Show what's currently playing</td></tr>
+  <tr><td><code>!skip</code></td><td><code>!skip</code></td><td>Skip to next track</td></tr>
+  <tr><td><code>!pause</code></td><td><code>!pause</code></td><td>Pause playback</td></tr>
+  <tr><td><code>!stop</code></td><td><code>!stop</code></td><td>Stop playback</td></tr>
+  <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Previous track</td></tr>
+  <tr><td><code>!playlist</code></td><td><code>!playlist</code></td><td>Show current playlist</td></tr>
+  <tr><td><code>!volume</code></td><td><code>!volume</code> or <code>!volume 50</code></td><td>Check or set volume (0-100)</td></tr>
+  <tr><td><code>!shuffle</code></td><td><code>!shuffle</code></td><td>Toggle shuffle</td></tr>
+  <tr><td><code>!repeat</code></td><td><code>!repeat</code></td><td>Cycle repeat mode (off / all / one)</td></tr>
+  <tr><td><code>!jump</code></td><td><code>!jump 3</code></td><td>Jump to track #3 in the playlist</td></tr>
+  <tr><td><code>!music</code></td><td><code>!music</code></td><td>Show all music commands</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="routes">Route System</h2>
+<p>Suggest flight routes for the stream! Submit your route and see it get picked.</p>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!myroute</code></td><td><code>!myroute KDCA KBWI</code></td><td>Submit a flight route</td></tr>
+  <tr><td><code>!routequeue</code></td><td><code>!routequeue</code></td><td>Show routes in queue</td></tr>
+  <tr><td><code>!currentroute</code></td><td><code>!currentroute</code></td><td>Show the active route</td></tr>
+  <tr><td><code>!removeroute</code></td><td><code>!removeroute</code></td><td>Remove your own route</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="keywords">Keyword Responses</h2>
+<p>The AI bot automatically responds when it hears certain words in chat.</p>
+
+<table>
+  <tr><th>Trigger</th><th>Response</th></tr>
+  <tr><td><code>gg</code></td><td>AI-generated enthusiastic response</td></tr>
+  <tr><td><code>nice landing</code></td><td>AI-generated proud response</td></tr>
+  <tr><td><code>crash</code></td><td>AI-generated dramatic/humorous response</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="bot-features">Automatic Bot Features</h2>
+<p>These happen automatically — no commands needed.</p>
+
+<table>
+  <tr><th>Feature</th><th>What happens</th></tr>
+  <tr><td>New Viewer Greeting</td><td>Personalized welcome when you chat for the first time</td></tr>
+  <tr><td>Returning Viewer</td><td>Welcome back message if you've been away 60+ min</td></tr>
+  <tr><td>Chat Interaction</td><td>AI persona responds to chat contextually</td></tr>
+  <tr><td>Flight Commentary</td><td>AI comments on takeoffs, landings, turns, and scenery</td></tr>
+  <tr><td>TTS Responses</td><td>Bot speaks its replies via AI text-to-speech</td></tr>
+</table>
+
+<p class="footer">King_Cobra74's Stream &mdash; All tools custom-built and self-hosted</p>
+
+</body>
+</html>
