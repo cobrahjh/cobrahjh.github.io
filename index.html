@@ -66,6 +66,9 @@ footer p{color:var(--text-dim);font-size:.85rem}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{text-decoration:underline}
 .footer-links{display:flex;justify-content:center;gap:2rem;margin-top:1rem}
+a.project-card{text-decoration:none;color:inherit;display:block}
+.project-url{font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--accent);margin-top:1rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,0.04);opacity:.85}
+.project-card:hover .project-url{opacity:1}
 @media(max-width:640px){.hero-stats{gap:1.5rem}.projects-grid{grid-template-columns:1fr}.arch-nodes{grid-template-columns:1fr 1fr}section{padding:3rem 1.25rem}}
 </style>
 </head>
@@ -77,8 +80,8 @@ footer a:hover{text-decoration:underline}
 <h1>Building Autonomous<br>Distributed Systems</h1>
 <p>Distributed AI orchestration, flight simulation control, and autonomous multi-machine systems &mdash; designed to self-heal, self-discover, and evolve.</p>
 <div class="hero-stats">
-<div class="stat"><div class="stat-value">4</div><div class="stat-label">Network Nodes</div></div>
-<div class="stat"><div class="stat-value">7+</div><div class="stat-label">Active Projects</div></div>
+<div class="stat"><div class="stat-value">3</div><div class="stat-label">Network Nodes</div></div>
+<div class="stat"><div class="stat-value">30+</div><div class="stat-label">Live Services</div></div>
 <div class="stat"><div class="stat-value">&infin;</div><div class="stat-label">Uptime Goal</div></div>
 </div>
 <div class="scroll-hint">Explore projects<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
@@ -90,54 +93,72 @@ footer a:hover{text-decoration:underline}
 <div class="projects-grid">
 
 <div class="project-card flagship">
-<div class="project-header"><div class="project-icon">&#x1F41D;</div><div class="project-name">Hive</div><span class="project-status status-live">Live</span></div>
-<p class="project-desc">Autonomous AI orchestration system spanning a 4-node network. Self-healing, self-discovering, immortal. Event mesh on port 8750 &mdash; no polling, no manual starts. Auto-boots via Genesis Protocol when no environment is detected.</p>
-<div class="project-tags"><span class="tag">Node.js</span><span class="tag">Event Mesh</span><span class="tag">Auto-Discovery</span><span class="tag">WinRM</span><span class="tag">SSH</span></div>
+<div class="project-header"><div class="project-icon">&#x1F41D;</div><div class="project-name">HiveMesh</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Autonomous service mesh spanning a 3-node network. 30+ microservices self-register on boot, discover peers, and cooperate over a WebSocket event bus &mdash; no polling, no manual starts.</p>
+<div class="project-tags"><span class="tag">Node.js</span><span class="tag">Event Mesh</span><span class="tag">Auto-Discovery</span><span class="tag">PM2</span><span class="tag">NSSM</span></div>
 </div>
 
 <div class="project-card flagship">
 <div class="project-header"><div class="project-icon">&#x2708;&#xFE0F;</div><div class="project-name">SimWidget Engine</div><span class="project-status status-dev">Active Dev</span></div>
-<p class="project-desc">Flight simulator control system for MSFS 2024. Multi-bridge architecture with SimConnect integration, ATC navigation for AI flight bots, and real-time aircraft control interfaces.</p>
-<div class="project-tags"><span class="tag">SimConnect</span><span class="tag">MSFS 2024</span><span class="tag">ATC</span><span class="tag">Multi-Bridge</span></div>
+<p class="project-desc">Flight simulator control system for MSFS 2024. SimConnect bridge on Commander-PC, chat-driven flight controls, AI copilot commentary, and pane-based instrument overlays steerable by viewers.</p>
+<div class="project-tags"><span class="tag">SimConnect</span><span class="tag">MSFS 2024</span><span class="tag">Twitch</span><span class="tag">SimGlass</span></div>
 </div>
 
-<div class="project-card active">
-<div class="project-header"><div class="project-icon">&#x1F3B5;</div><div class="project-name">GridJam</div><span class="project-status status-beta">Beta</span></div>
-<p class="project-desc">Network-aware music collaboration tool that embraces latency instead of fighting it. Beat-grid quantization ensures everything stays in sync regardless of network conditions.</p>
-<div class="project-tags"><span class="tag">Web Audio</span><span class="tag">Beat Quantization</span><span class="tag">Real-Time</span><span class="tag">Collaboration</span></div>
-</div>
+<a class="project-card flagship" href="https://dashboard.kinghive.games" target="_blank" rel="noopener">
+<div class="project-header"><div class="project-icon">&#x1F4CA;</div><div class="project-name">Health Dashboard</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Real-time status wall for every Hive service. PM2 health, mesh heartbeats, socket leaks, and restart history &mdash; one glance tells you whether the stream is flying or falling.</p>
+<div class="project-tags"><span class="tag">PM2</span><span class="tag">WebSocket</span><span class="tag">Telemetry</span></div>
+<div class="project-url">dashboard.kinghive.games &rarr;</div>
+</a>
 
 </div>
 </section>
 
 <section>
-<div class="section-label">// Infrastructure</div>
-<h2 class="section-title">Tools &amp; Systems</h2>
+<div class="section-label">// Stream Apps</div>
+<h2 class="section-title">Viewer-Facing Products</h2>
 <div class="projects-grid">
 
-<div class="project-card tool">
-<div class="project-header"><div class="project-icon">&#x1F399;&#xFE0F;</div><div class="project-name">Voice Bridge</div><span class="project-status status-live">Live</span></div>
-<p class="project-desc">Browser-based voice control system using Web Speech API. Connects voice commands directly to Hive for hands-free orchestration and accessibility across the network.</p>
-<div class="project-tags"><span class="tag">Web Speech API</span><span class="tag">Accessibility</span><span class="tag">Voice Control</span></div>
-</div>
+<a class="project-card active" href="https://draw.kinghive.games" target="_blank" rel="noopener">
+<div class="project-header"><div class="project-icon">&#x1F3A8;</div><div class="project-name">HivePainter</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Local Stable Diffusion art overlay. Viewers type <code>!draw</code> in Twitch chat and watch the image paint in real time on the stream. Public gallery of every piece ever generated.</p>
+<div class="project-tags"><span class="tag">Stable Diffusion</span><span class="tag">React</span><span class="tag">WebSocket</span><span class="tag">Twitch</span></div>
+<div class="project-url">draw.kinghive.games &rarr;</div>
+</a>
+
+<a class="project-card active" href="https://studio.kinghive.online" target="_blank" rel="noopener">
+<div class="project-header"><div class="project-icon">&#x2728;</div><div class="project-name">Creative Studio</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">AI image and video generation via Grok. Browser-mode automation keeps it free for the community. Viewer commands: <code>!imagine</code>, <code>!video</code>, <code>!gallery</code>.</p>
+<div class="project-tags"><span class="tag">Grok</span><span class="tag">Puppeteer</span><span class="tag">Image &amp; Video</span></div>
+<div class="project-url">studio.kinghive.online &rarr;</div>
+</a>
+
+<a class="project-card active" href="https://chat.kinghive.games" target="_blank" rel="noopener">
+<div class="project-header"><div class="project-icon">&#x1F4AC;</div><div class="project-name">Hive Chat</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Web chat with voice input and paint-to-prompt. Converses with Grok, speaks replies through a shared TTS layer, and feeds into the same persona the Twitch bot uses.</p>
+<div class="project-tags"><span class="tag">Grok</span><span class="tag">Voice</span><span class="tag">TTS</span></div>
+<div class="project-url">chat.kinghive.games &rarr;</div>
+</a>
+
+<a class="project-card tool" href="https://cobrahjh.github.io/commands.html">
+<div class="project-header"><div class="project-icon">&#x1F916;</div><div class="project-name">Twitch Bot Suite</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Custom-built chat stack &mdash; no StreamElements, no Streamlabs. AI persona bridge, flight-sim commands, routes, shoutouts, translate, music requests, and viewer-controlled instrument panes.</p>
+<div class="project-tags"><span class="tag">tmi.js</span><span class="tag">Twitch EventSub</span><span class="tag">AI Persona</span></div>
+<div class="project-url">cobrahjh.github.io/commands.html &rarr;</div>
+</a>
 
 <div class="project-card tool">
-<div class="project-header"><div class="project-icon">&#x1F4E6;</div><div class="project-name">Kittbox REM</div><span class="project-status status-live">Live</span></div>
-<p class="project-desc">Remote Execution Module for authenticated command execution across the network. Secure, fast, and integrated with the Hive event mesh for distributed task management.</p>
-<div class="project-tags"><span class="tag">Remote Exec</span><span class="tag">Auth</span><span class="tag">Network</span></div>
+<div class="project-header"><div class="project-icon">&#x1F3AD;</div><div class="project-name">Emote Suite</div><span class="project-status status-live">Live</span></div>
+<p class="project-desc">Three paired creator tools: <strong>HiveEmote</strong> (Fabric.js static emotes + AI), <strong>HiveAnimate</strong> (frame editor, GIF/APNG export), and <strong>HiveClip</strong> (video-to-GIF with trim, crop, capture).</p>
+<div class="project-tags"><span class="tag">Fabric.js</span><span class="tag">GIF/APNG</span><span class="tag">FFmpeg</span></div>
 </div>
 
-<div class="project-card tool">
-<div class="project-header"><div class="project-icon">&#x1F40D;</div><div class="project-name">CobraControl</div><span class="project-status status-live">Live</span></div>
-<p class="project-desc">Windows automation suite with system tray integration and secure elevation handling. Background services, hotkey triggers, and deep OS integration.</p>
-<div class="project-tags"><span class="tag">Windows</span><span class="tag">System Tray</span><span class="tag">Automation</span></div>
-</div>
-
-<div class="project-card experiment">
-<div class="project-header"><div class="project-icon">&#x1F9E0;</div><div class="project-name">LLM Router</div><span class="project-status status-dev">Active Dev</span></div>
-<p class="project-desc">Intelligent multi-provider LLM routing service. Integrates Gemini, Claude, and other APIs with smart fallback, load balancing, and cost optimization across the Hive network.</p>
-<div class="project-tags"><span class="tag">Gemini</span><span class="tag">Claude API</span><span class="tag">Routing</span><span class="tag">Multi-Provider</span></div>
-</div>
+<a class="project-card experiment" href="https://family.kinghive.games" target="_blank" rel="noopener">
+<div class="project-header"><div class="project-icon">&#x1F3E1;</div><div class="project-name">HIVE Family</div><span class="project-status status-beta">Beta</span></div>
+<p class="project-desc">External app hub for the community &mdash; shared tools, gated behind a rotating daily password so anyone in chat can access without standing accounts.</p>
+<div class="project-tags"><span class="tag">Cloudflare Access</span><span class="tag">Auth Rotator</span></div>
+<div class="project-url">family.kinghive.games &rarr;</div>
+</a>
 
 </div>
 </section>
@@ -148,10 +169,9 @@ footer a:hover{text-decoration:underline}
 <div class="arch-diagram">
 <div class="arch-title">$ hive network --status</div>
 <div class="arch-nodes">
-<div class="arch-node"><div class="node-name">Commander-PC</div><div class="node-id">Node Alpha</div><div class="node-role">Primary / Command</div></div>
-<div class="arch-node"><div class="node-name">Morpu-PC</div><div class="node-id">Node Bravo</div><div class="node-role">Compute Node</div></div>
-<div class="arch-node"><div class="node-name">AI-PC</div><div class="node-id">Node Charlie</div><div class="node-role">AI / Inference</div></div>
-<div class="arch-node"><div class="node-name">Rock-PC</div><div class="node-id">Node Delta</div><div class="node-role">Services Node</div></div>
+<div class="arch-node"><div class="node-name">Rock-PC</div><div class="node-id">Node Alpha</div><div class="node-role">Primary / Services</div></div>
+<div class="arch-node"><div class="node-name">Commander-PC</div><div class="node-id">Node Bravo</div><div class="node-role">MSFS 2024 / SimConnect</div></div>
+<div class="arch-node"><div class="node-name">Morpu-PC</div><div class="node-id">Node Charlie</div><div class="node-role">Standby / Compute</div></div>
 </div>
 </div>
 </section>
@@ -161,13 +181,17 @@ footer a:hover{text-decoration:underline}
 <h2 class="section-title">Technologies</h2>
 <div class="tech-grid">
 <div class="tech-item"><div class="tech-name">Node.js</div><div class="tech-use">Core Runtime</div></div>
-<div class="tech-item"><div class="tech-name">Python</div><div class="tech-use">Automation</div></div>
+<div class="tech-item"><div class="tech-name">PM2 / NSSM</div><div class="tech-use">Service Mgmt</div></div>
+<div class="tech-item"><div class="tech-name">WebSocket Mesh</div><div class="tech-use">Event Bus</div></div>
 <div class="tech-item"><div class="tech-name">SimConnect</div><div class="tech-use">MSFS Bridge</div></div>
-<div class="tech-item"><div class="tech-name">WinRM / SSH</div><div class="tech-use">Remote Mgmt</div></div>
-<div class="tech-item"><div class="tech-name">Web Speech API</div><div class="tech-use">Voice Control</div></div>
-<div class="tech-item"><div class="tech-name">LLM APIs</div><div class="tech-use">AI Integration</div></div>
-<div class="tech-item"><div class="tech-name">Web Audio</div><div class="tech-use">GridJam Engine</div></div>
-<div class="tech-item"><div class="tech-name">Windows APIs</div><div class="tech-use">OS Integration</div></div>
+<div class="tech-item"><div class="tech-name">Stable Diffusion</div><div class="tech-use">Local Art Gen</div></div>
+<div class="tech-item"><div class="tech-name">Grok / Claude / Gemini</div><div class="tech-use">LLM Routing</div></div>
+<div class="tech-item"><div class="tech-name">Kokoro / OpenAI TTS</div><div class="tech-use">Voice Output</div></div>
+<div class="tech-item"><div class="tech-name">OBS WebSocket</div><div class="tech-use">Stream Control</div></div>
+<div class="tech-item"><div class="tech-name">Twitch EventSub</div><div class="tech-use">Chat &amp; Events</div></div>
+<div class="tech-item"><div class="tech-name">Cloudflare Tunnel</div><div class="tech-use">Public Routing</div></div>
+<div class="tech-item"><div class="tech-name">SQLite (WAL)</div><div class="tech-use">Persistence</div></div>
+<div class="tech-item"><div class="tech-name">Python / FFmpeg</div><div class="tech-use">Media Pipelines</div></div>
 </div>
 </section>
 
