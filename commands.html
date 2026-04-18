@@ -48,6 +48,9 @@
   <a href="#sim-commands">Quick Sim</a>
   <a href="#camera">Camera</a>
   <a href="#tts-ai">TTS & AI</a>
+  <a href="#creative-studio">Creative Studio</a>
+  <a href="#painter">HivePainter</a>
+  <a href="#simglass">SimGlass</a>
   <a href="#music">Music</a>
   <a href="#routes">Routes</a>
   <a href="#keywords">Keywords</a>
@@ -75,6 +78,7 @@
   <tr><td><code>!lurk</code></td><td>Go lurk mode</td></tr>
   <tr><td><code>!unlurk</code></td><td>Come back from lurking</td></tr>
   <tr><td><code>!quote</code></td><td>Random aviation quote</td></tr>
+  <tr><td><code>!hivepassword</code> / <code>!hp</code></td><td>Today's rotating Hive password for kinghive.games sites</td></tr>
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -130,6 +134,8 @@
   <tr><td><code>!throttle 50</code></td><td>Set throttle (0-100%)</td></tr>
   <tr><td><code>!navlights</code></td><td>Toggle nav lights</td></tr>
   <tr><td><code>!spoilers</code></td><td>Toggle spoilers</td></tr>
+  <tr><td><code>!simpause</code></td><td>Toggle sim pause</td></tr>
+  <tr><td><code>!ap</code></td><td>Toggle autopilot master</td></tr>
   <tr><td><code>!apheading 270</code></td><td>Set AP heading + enable HDG</td></tr>
   <tr><td><code>!apalt 5000</code></td><td>Set AP altitude + enable ALT hold</td></tr>
   <tr><td><code>!apvs 500</code></td><td>Set vertical speed (-5000 to 5000 fpm)</td></tr>
@@ -164,26 +170,70 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="creative-studio">Creative Studio</h2>
+<p>Generate AI images and videos with Grok. Results land in the online gallery.</p>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!imagine</code></td><td><code>!imagine a sunset over mountains</code></td><td>Generate an image from a text prompt</td></tr>
+  <tr><td><code>!video</code></td><td><code>!video a cat walking</code></td><td>Generate a 6s video from a text prompt</td></tr>
+  <tr><td><code>!video</code></td><td><code>!video animate this https://...</code></td><td>Animate an image (image-to-video)</td></tr>
+  <tr><td><code>!gallery</code></td><td><code>!gallery</code></td><td>Link to the image/video gallery</td></tr>
+  <tr><td><code>!artstatus</code></td><td><code>!artstatus</code></td><td>Check if something is generating</td></tr>
+  <tr><td><code>!arthelp</code></td><td><code>!arthelp</code></td><td>List all creative studio commands</td></tr>
+  <tr><td><code>!artmode</code></td><td><code>!artmode</code></td><td>Show current generation mode (free/paid)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="painter">HivePainter</h2>
+<p>Queue an AI drawing that paints live on stream. View the gallery at <a href="https://draw.kinghive.games" target="_blank" style="color:var(--cyan)">draw.kinghive.games</a>.</p>
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!draw</code></td><td><code>!draw a dragon flying over tokyo</code></td><td>Queue a drawing — streams the paint in real time</td></tr>
+  <tr><td><code>!paintqueue</code></td><td><code>!paintqueue</code></td><td>Current painting + queue depth</td></tr>
+  <tr><td><code>!paintstatus</code></td><td><code>!paintstatus</code></td><td>What's currently drawing</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2 id="simglass">SimGlass Instrument Panes</h2>
+<p>Toggle on-screen instrument panels (PFD, GPS, radio, weather) or vote on what to show when a pane vote is running.</p>
+
+<h3>Panes</h3>
+<p><code>pfd</code> · <code>mfd</code> · <code>gps</code> · <code>radio</code> · <code>autopilot</code> · <code>weather</code> · <code>traffic</code> · <code>systems</code></p>
+
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!show&lt;pane&gt;</code></td><td><code>!showpfd</code></td><td>Activate a pane (pane id as suffix, no space)</td></tr>
+  <tr><td><code>!hide&lt;pane&gt;</code></td><td><code>!hidegps</code></td><td>Deactivate a pane</td></tr>
+  <tr><td><code>!panes</code></td><td><code>!panes</code></td><td>List active panes</td></tr>
+  <tr><td><code>!panelist</code></td><td><code>!panelist</code></td><td>List available panes</td></tr>
+  <tr><td><code>!vote&lt;pane&gt;</code></td><td><code>!voteweather</code></td><td>Cast a vote during an active pane vote</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════ -->
 <h2 id="music">Music Commands</h2>
 <p>Request songs, control playback, and manage the music queue. Songs play on stream via YouTube.</p>
 
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
   <tr><td><code>!play</code></td><td><code>!play lofi hip hop</code></td><td>Search YouTube and play a song (or resume playback)</td></tr>
-  <tr><td><code>!queue</code></td><td><code>!queue chill beats</code></td><td>Search and add a song to the queue</td></tr>
-  <tr><td><code>!sr</code></td><td><code>!sr song name</code></td><td>Song request (alias for !queue)</td></tr>
-  <tr><td><code>!song</code> / <code>!np</code></td><td><code>!song</code></td><td>Show what's currently playing</td></tr>
-  <tr><td><code>!skip</code></td><td><code>!skip</code></td><td>Skip to next track</td></tr>
+  <tr><td><code>!queue</code> / <code>!sr</code> / <code>!request</code></td><td><code>!queue chill beats</code></td><td>Search and add a song to the queue</td></tr>
+  <tr><td><code>!song</code> / <code>!np</code> / <code>!nowplaying</code></td><td><code>!song</code></td><td>Show what's currently playing</td></tr>
+  <tr><td><code>!skip</code> / <code>!next</code> / <code>!nextsong</code></td><td><code>!skip</code></td><td>Skip to next track</td></tr>
+  <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Previous track</td></tr>
   <tr><td><code>!pause</code></td><td><code>!pause</code></td><td>Pause playback</td></tr>
   <tr><td><code>!stop</code></td><td><code>!stop</code></td><td>Stop playback</td></tr>
-  <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Previous track</td></tr>
+  <tr><td><code>!restart</code> / <code>!restartsong</code></td><td><code>!restart</code></td><td>Restart current song from the beginning</td></tr>
+  <tr><td><code>!seek</code></td><td><code>!seek 1:30</code> or <code>!seek 90</code></td><td>Seek to timestamp (mm:ss or seconds)</td></tr>
+  <tr><td><code>!fw</code> / <code>!ff</code></td><td><code>!ff</code></td><td>Skip forward 15s</td></tr>
+  <tr><td><code>!rw</code></td><td><code>!rw</code></td><td>Rewind 15s</td></tr>
   <tr><td><code>!playlist</code></td><td><code>!playlist</code></td><td>Show current playlist</td></tr>
-  <tr><td><code>!volume</code></td><td><code>!volume</code> or <code>!volume 50</code></td><td>Check or set volume (0-100)</td></tr>
+  <tr><td><code>!volume</code> / <code>!vol</code></td><td><code>!volume</code> or <code>!volume 50</code></td><td>Check or set volume (0-100)</td></tr>
   <tr><td><code>!shuffle</code></td><td><code>!shuffle</code></td><td>Toggle shuffle</td></tr>
   <tr><td><code>!repeat</code></td><td><code>!repeat</code> or <code>!repeat one</code></td><td>Cycle repeat, or set: one / all / off</td></tr>
   <tr><td><code>!loop</code></td><td><code>!loop</code></td><td>Loop current song</td></tr>
   <tr><td><code>!jump</code></td><td><code>!jump 3</code></td><td>Jump to track #3 in the playlist</td></tr>
   <tr><td><code>!music</code></td><td><code>!music</code></td><td>Show all music commands</td></tr>
+  <tr><td><code>!vc</code> / <code>!viewercommands</code></td><td><code>!vc</code></td><td>Link to this viewer commands page</td></tr>
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
