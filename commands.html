@@ -3,79 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>King_Cobra74 — Viewer Commands</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>HIVE Viewer Commands — King_Cobra74</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d0d0d'/><text x='16' y='23' text-anchor='middle' font-size='20' font-family='sans-serif' fill='%23e8930c'>H</text></svg>">
+<link rel="stylesheet" href="hive-theme.css">
 <style>
-  :root {
-    --bg: hsl(0 0% 5%);
-    --card: hsl(0 0% 10%);
-    --border: hsl(0 0% 18%);
-    --text: hsl(0 0% 95%);
-    --muted: hsl(0 0% 50%);
-    --primary: hsl(37 91% 55%);
-    --primary-dim: hsl(37 91% 55% / 0.12);
-    --primary-hover: hsl(37 91% 55% / 0.22);
-    --green: hsl(142 71% 45%);
-    --green-dim: hsl(142 71% 45% / 0.1);
-    --radius: 0.5rem;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family:'Inter',system-ui,sans-serif;
-    background:var(--bg); color:var(--text);
-    line-height:1.6; padding:2.5rem;
-    max-width:1100px; margin:0 auto;
-  }
-
-  h1 { font-size:1.9rem; font-weight:700; letter-spacing:0.04em; margin-bottom:0.3rem; }
-  h1 span { color:var(--primary); }
-  .subtitle { color:var(--muted); font-size:0.9rem; margin-bottom:2rem; }
-  h2 { font-size:1.15rem; font-weight:600; margin:2.5rem 0 0.75rem; padding-bottom:8px; border-bottom:1px solid var(--border); color:var(--primary); letter-spacing:0.02em; }
-  h3 { font-size:0.9rem; font-weight:600; margin:1.5rem 0 0.5rem; color:var(--text); letter-spacing:0.02em; }
-  p { font-size:0.875rem; color:hsl(0 0% 70%); margin-bottom:0.75rem; }
-
-  .nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:2rem; padding:12px; background:var(--card); border-radius:var(--radius); border:1px solid var(--border); }
-  .nav a { color:var(--primary); text-decoration:none; font-size:0.78rem; font-weight:500; padding:4px 12px; border-radius:4px; background:var(--primary-dim); transition:background .15s; }
-  .nav a:hover { background:var(--primary-hover); }
-
-  table { width:100%; border-collapse:collapse; margin:0.5rem 0 1.5rem; font-size:0.82rem; }
-  th { text-align:left; padding:8px 12px; background:var(--card); border:1px solid var(--border); color:var(--primary); font-weight:600; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; }
-  td { padding:7px 12px; border:1px solid var(--border); vertical-align:top; color:hsl(0 0% 80%); }
-  tr:hover td { background:hsl(0 0% 8%); }
-  code { background:var(--primary-dim); color:var(--primary); padding:1px 6px; border-radius:3px; font-family:'JetBrains Mono',monospace; font-size:0.82em; }
-
-  .info { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:12px 16px; margin:0.8rem 0; font-size:0.82rem; color:hsl(0 0% 75%); }
-  .info.tip { border-left:3px solid var(--green); background:var(--green-dim); }
-  .info strong { color:var(--primary); }
-  .footer { color:var(--muted); text-align:center; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); font-size:0.8rem; }
-  .footer a { color:var(--primary); text-decoration:none; }
-  .footer a:hover { text-decoration:underline; }
-
-  @media print { body { background:#fff; color:#000; } th { background:#eee; } .nav { display:none; } }
+  .top-link { display:block; text-align:right; margin:-0.5rem 0 0.5rem; font-size:0.72rem; }
+  .top-link a { color:var(--muted); text-decoration:none; }
+  .top-link a:hover { color:var(--primary); }
 </style>
 </head>
 <body>
 
-<h1><span>&#x1F41D;</span> King_Cobra74 &mdash; Viewer Commands</h1>
-<p class="subtitle">Everything you can do in chat &mdash; flight controls, AI copilot, art generation, music requests, and more. Part of the <a href="https://cobrahjh.github.io/" style="color:var(--primary)">Hive</a> stream stack.</p>
+<a class="back-link" href="index.html">&#8592; Back to Home</a>
 
-<div class="nav">
+<h1><span class="accent">HIVE</span> Viewer Commands</h1>
+<p class="subtitle">Everything you can do in chat — flight controls, AI copilot, music requests, and more.</p>
+
+<div class="nav" id="top">
   <a href="#general">General</a>
   <a href="#flight-controls">Flight Controls</a>
   <a href="#sim-commands">Quick Sim</a>
   <a href="#camera">Camera</a>
   <a href="#tts-ai">TTS & AI</a>
   <a href="#creative-studio">Creative Studio</a>
-  <a href="#painter">HivePainter</a>
   <a href="#simglass">SimGlass</a>
   <a href="#music">Music</a>
+  <a href="#art">AI Art</a>
+  <a href="#hivefish">Fishing</a>
   <a href="#routes">Routes</a>
   <a href="#keywords">Keywords</a>
   <a href="#bot-features">Bot Features</a>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ -->
 <h2 id="general" data-bot="kit">General Commands</h2>
 <p>Info and social commands available to everyone.</p>
 
@@ -99,7 +58,7 @@
   <tr><td><code>!hivepassword</code> / <code>!hp</code></td><td>Today's rotating Hive password for kinghive.games sites</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="flight-controls" data-bot="flight">Flight Controls</h2>
 <p>Control the aircraft directly from chat! Autopilot, flaps, gear, and lights.</p>
 
@@ -119,7 +78,7 @@
   <tr><td><code>!ap-nav-off</code></td><td><code>!ap-nav-off</code></td><td>NAV mode OFF</td></tr>
 </table>
 
-<h3>Flaps & Gear</h3>
+<h3>Flaps &amp; Gear</h3>
 <table>
   <tr><th>Command</th><th>Usage</th><th>Effect</th></tr>
   <tr><td><code>!flaps</code></td><td><code>!flaps 2</code></td><td>Set flaps (0=up, 1=10, 2=20, 3=full)</td></tr>
@@ -139,7 +98,7 @@
   <tr><td><code>!taxi</code></td><td><code>!taxi on</code></td><td>Taxi lights</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="sim-commands" data-bot="flight">Quick Sim Commands</h2>
 <p>Shorthand commands for common flight actions.</p>
 
@@ -159,7 +118,7 @@
   <tr><td><code>!apvs 500</code></td><td>Set vertical speed (-5000 to 5000 fpm)</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="camera" data-bot="flight">Camera Commands</h2>
 <p>Switch the in-game camera view from chat.</p>
 <table>
@@ -171,8 +130,8 @@
   <tr><td><code>!cam prev</code></td><td>Previous camera</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="tts-ai" data-bot="kit">TTS & AI Copilot</h2>
+<p class="top-link"><a href="#top">back to top</a></p>
+<h2 id="tts-ai" data-bot="kit">TTS &amp; AI Copilot</h2>
 <p>Talk to the AI copilot, have text read aloud, or request cinematic narration.</p>
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
@@ -185,9 +144,10 @@
   <tr><td><code>!copilot</code></td><td><code>!copilot what city is that?</code></td><td>Ask AI copilot about the current flight</td></tr>
   <tr><td><code>!narrator</code></td><td><code>!narrator</code></td><td>Cinematic narration of current scenery</td></tr>
   <tr><td><code>!commentarystatus</code></td><td><code>!commentarystatus</code></td><td>Check if AI commentary is ON or OFF</td></tr>
+  <tr><td><code>!ttshelp</code></td><td><code>!ttshelp</code></td><td>List all TTS &amp; AI copilot commands</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="creative-studio" data-bot="studio">Creative Studio</h2>
 <p>Generate AI images and videos with Grok. Results land in the online gallery.</p>
 <table>
@@ -201,22 +161,12 @@
   <tr><td><code>!artmode</code></td><td><code>!artmode</code></td><td>Show current generation mode (free/paid)</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="painter" data-bot="paint">HivePainter</h2>
-<p>Queue an AI drawing that paints live on stream. View the gallery at <a href="https://draw.kinghive.games" target="_blank" style="color:var(--cyan)">draw.kinghive.games</a>.</p>
-<table>
-  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
-  <tr><td><code>!draw</code></td><td><code>!draw a dragon flying over tokyo</code></td><td>Queue a drawing — streams the paint in real time</td></tr>
-  <tr><td><code>!paintqueue</code></td><td><code>!paintqueue</code></td><td>Current painting + queue depth</td></tr>
-  <tr><td><code>!paintstatus</code></td><td><code>!paintstatus</code></td><td>What's currently drawing</td></tr>
-</table>
-
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="simglass" data-bot="simglass">SimGlass Instrument Panes</h2>
 <p>Toggle on-screen instrument panels (PFD, GPS, radio, weather) or vote on what to show when a pane vote is running.</p>
 
 <h3>Panes</h3>
-<p><code>pfd</code> · <code>mfd</code> · <code>gps</code> · <code>radio</code> · <code>autopilot</code> · <code>weather</code> · <code>traffic</code> · <code>systems</code></p>
+<p><code>pfd</code> &middot; <code>mfd</code> &middot; <code>gps</code> &middot; <code>radio</code> &middot; <code>autopilot</code> &middot; <code>weather</code> &middot; <code>traffic</code> &middot; <code>systems</code></p>
 
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
@@ -227,7 +177,7 @@
   <tr><td><code>!vote&lt;pane&gt;</code></td><td><code>!voteweather</code></td><td>Cast a vote during an active pane vote</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="music" data-bot="music-bot">Music Commands</h2>
 <p>Request songs, control playback, and manage the music queue. Songs play on stream via YouTube.</p>
 
@@ -237,7 +187,7 @@
   <tr><td><code>!queue</code> / <code>!sr</code> / <code>!request</code></td><td><code>!queue chill beats</code></td><td>Search and add a song to the queue</td></tr>
   <tr><td><code>!song</code> / <code>!np</code> / <code>!nowplaying</code></td><td><code>!song</code></td><td>Show what's currently playing</td></tr>
   <tr><td><code>!skip</code> / <code>!next</code> / <code>!nextsong</code></td><td><code>!skip</code></td><td>Skip to next track</td></tr>
-  <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Previous track</td></tr>
+  <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Restart current track. Press again within 3s to go to the previous track.</td></tr>
   <tr><td><code>!pause</code></td><td><code>!pause</code></td><td>Pause playback</td></tr>
   <tr><td><code>!stop</code></td><td><code>!stop</code></td><td>Stop playback</td></tr>
   <tr><td><code>!restart</code> / <code>!restartsong</code> / <code>!replay</code></td><td><code>!restart</code></td><td>Restart current song from the beginning</td></tr>
@@ -254,7 +204,62 @@
   <tr><td><code>!vc</code> / <code>!viewercommands</code></td><td><code>!vc</code></td><td>Link to this viewer commands page</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
+<h2 id="art" data-bot="paint">AI Art (HivePainter)</h2>
+<p>Request AI-generated artwork that appears on stream! The AI creates an image and reveals it with a drawing animation.</p>
+
+<table>
+  <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
+  <tr><td><code>!draw</code></td><td><code>!draw a dragon breathing fire</code></td><td>Request an AI drawing (queued)</td></tr>
+  <tr><td><code>!paintqueue</code></td><td><code>!paintqueue</code></td><td>Show how many drawings are in the queue</td></tr>
+  <tr><td><code>!paintstatus</code></td><td><code>!paintstatus</code></td><td>Show what's currently being drawn</td></tr>
+</table>
+
+<div class="info tip">
+  <strong>Tip:</strong> Be descriptive! "a red dragon flying over a castle at sunset" works better than just "dragon". The AI generates a unique image each time.
+</div>
+
+<p class="top-link"><a href="#top">back to top</a></p>
+<h2 id="hivefish" data-bot="fish">HiveFish &#127907;</h2>
+<p>Cast a line, reel in fish across six rarity tiers, level up, and climb the leaderboard. 79 species — most are common; legendaries are once-in-a-stream rare.</p>
+
+<h3>Chat Commands</h3>
+<table>
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td><code>!fish</code></td><td>Cast a line (10s cooldown). Roll a fish from the standard table.</td></tr>
+  <tr><td><code>!fishstats</code></td><td>Your level, XP, biggest catch, legendary count.</td></tr>
+  <tr><td><code>!fishleader</code></td><td>Top 5 anglers this session by XP.</td></tr>
+  <tr><td><code>!fishbest</code></td><td>All-time biggest fish caught on the channel.</td></tr>
+  <tr><td><code>!fishhelp</code></td><td>Quick command reference.</td></tr>
+</table>
+
+<h3>Other Ways to Cast</h3>
+<table>
+  <tr><th>Trigger</th><th>What you get</th></tr>
+  <tr><td>Channel Points: &#127907; Cast a Line</td><td>Free cast, no cooldown.</td></tr>
+  <tr><td>Bits 50+</td><td>Bonus cast.</td></tr>
+  <tr><td>Bits 500+</td><td>Guaranteed rare or better, 2&times; XP.</td></tr>
+  <tr><td>Bits 2000+</td><td>Guaranteed epic or better, 3&times; XP.</td></tr>
+  <tr><td>Sub / Resub</td><td>Free cast. T2 &rarr; uncommon+, T3 &rarr; rare+. XP scales with tier.</td></tr>
+  <tr><td>Raid</td><td>Raider gets a guaranteed uncommon+ cast.</td></tr>
+</table>
+
+<h3>Catch Odds</h3>
+<table>
+  <tr><th>Tier</th><th>Per-cast chance</th><th>Species</th></tr>
+  <tr><td>Junk</td><td>22%</td><td>13 (boots, tires, gum wads&hellip;)</td></tr>
+  <tr><td>Common</td><td>49%</td><td>14</td></tr>
+  <tr><td>Uncommon</td><td>22%</td><td>13</td></tr>
+  <tr><td>Rare</td><td>5%</td><td>13</td></tr>
+  <tr><td>Epic</td><td>1.5%</td><td>13</td></tr>
+  <tr><td>Legendary</td><td>0.5%</td><td>13</td></tr>
+</table>
+
+<div class="info tip">
+  <strong>Tip:</strong> Epic and legendary catches trigger a stream-wide alert &mdash; cheer big or sub for guaranteed-rare casts to chase the headline fish (Kraken Jr., Leviathan, Megalodon, Phoenix Carp&hellip;).
+</div>
+
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="routes" data-bot="flight">Route System</h2>
 <p>Suggest flight routes for the stream! Submit your route and see it get picked.</p>
 <table>
@@ -265,7 +270,7 @@
   <tr><td><code>!removeroute</code></td><td><code>!removeroute</code></td><td>Remove your own route</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="keywords" data-bot="kit">Keyword Responses</h2>
 <p>The AI bot automatically responds when it hears certain words in chat.</p>
 
@@ -276,7 +281,7 @@
   <tr><td><code>crash</code></td><td>AI-generated dramatic/humorous response</td></tr>
 </table>
 
-<!-- ═══════════════════════════════════════════════════════ -->
+<p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="bot-features" data-bot="kit">Automatic Bot Features</h2>
 <p>These happen automatically — no commands needed.</p>
 
@@ -289,8 +294,9 @@
   <tr><td>TTS Responses</td><td>Bot speaks its replies via AI text-to-speech</td></tr>
 </table>
 
-<p class="footer">All stream tools custom-built and self-hosted &mdash; <a href="https://cobrahjh.github.io/">Hive</a></p>
+<p class="footer">King_Cobra74's Stream — All tools custom-built and self-hosted</p>
 
 <script src="bot-states.js"></script>
+<script src="/doc-visibility.js" defer></script>
 </body>
 </html>
