@@ -133,7 +133,7 @@
   // STATE labels — disabled & offline both render as "OFFLINE" (red). LIVE keeps broadcast icon.
   const STATE = {
     online:   { text: 'LIVE',    tip: 'Service running and accepting commands' },
-    disabled: { text: 'OFFLINE', tip: 'Toggled off in Stream Control — chat commands are not handled' },
+    disabled: { text: 'OFFLINE', tip: 'Toggled off in the Twitch Stream Administrator Hub — chat commands are not handled' },
     offline:  { text: 'OFFLINE', tip: 'Service is not running' },
   };
 
