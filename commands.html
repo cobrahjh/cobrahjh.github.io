@@ -76,7 +76,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="general">General Commands</h2>
+<h2 id="general" data-bot="kit">General Commands</h2>
 <p>Info and social commands available to everyone.</p>
 
 <table>
@@ -100,7 +100,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="flight-controls">Flight Controls</h2>
+<h2 id="flight-controls" data-bot="flight">Flight Controls</h2>
 <p>Control the aircraft directly from chat! Autopilot, flaps, gear, and lights.</p>
 
 <h3>Autopilot</h3>
@@ -140,7 +140,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="sim-commands">Quick Sim Commands</h2>
+<h2 id="sim-commands" data-bot="flight">Quick Sim Commands</h2>
 <p>Shorthand commands for common flight actions.</p>
 
 <table>
@@ -160,7 +160,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="camera">Camera Commands</h2>
+<h2 id="camera" data-bot="flight">Camera Commands</h2>
 <p>Switch the in-game camera view from chat.</p>
 <table>
   <tr><th>Command</th><th>View</th></tr>
@@ -172,7 +172,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="tts-ai">TTS & AI Copilot</h2>
+<h2 id="tts-ai" data-bot="kit">TTS & AI Copilot</h2>
 <p>Talk to the AI copilot, have text read aloud, or request cinematic narration.</p>
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
@@ -188,7 +188,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="creative-studio">Creative Studio</h2>
+<h2 id="creative-studio" data-bot="studio">Creative Studio</h2>
 <p>Generate AI images and videos with Grok. Results land in the online gallery.</p>
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
@@ -202,7 +202,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="painter">HivePainter</h2>
+<h2 id="painter" data-bot="paint">HivePainter</h2>
 <p>Queue an AI drawing that paints live on stream. View the gallery at <a href="https://draw.kinghive.games" target="_blank" style="color:var(--cyan)">draw.kinghive.games</a>.</p>
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
@@ -212,7 +212,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="simglass">SimGlass Instrument Panes</h2>
+<h2 id="simglass" data-bot="simglass">SimGlass Instrument Panes</h2>
 <p>Toggle on-screen instrument panels (PFD, GPS, radio, weather) or vote on what to show when a pane vote is running.</p>
 
 <h3>Panes</h3>
@@ -228,7 +228,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="music">Music Commands</h2>
+<h2 id="music" data-bot="music-bot">Music Commands</h2>
 <p>Request songs, control playback, and manage the music queue. Songs play on stream via YouTube.</p>
 
 <table>
@@ -240,7 +240,7 @@
   <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Previous track</td></tr>
   <tr><td><code>!pause</code></td><td><code>!pause</code></td><td>Pause playback</td></tr>
   <tr><td><code>!stop</code></td><td><code>!stop</code></td><td>Stop playback</td></tr>
-  <tr><td><code>!restart</code> / <code>!restartsong</code></td><td><code>!restart</code></td><td>Restart current song from the beginning</td></tr>
+  <tr><td><code>!restart</code> / <code>!restartsong</code> / <code>!replay</code></td><td><code>!restart</code></td><td>Restart current song from the beginning</td></tr>
   <tr><td><code>!seek</code></td><td><code>!seek 1:30</code> or <code>!seek 90</code></td><td>Seek to timestamp (mm:ss or seconds)</td></tr>
   <tr><td><code>!fw</code> / <code>!ff</code></td><td><code>!ff</code></td><td>Skip forward 15s</td></tr>
   <tr><td><code>!rw</code></td><td><code>!rw</code></td><td>Rewind 15s</td></tr>
@@ -255,7 +255,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="routes">Route System</h2>
+<h2 id="routes" data-bot="flight">Route System</h2>
 <p>Suggest flight routes for the stream! Submit your route and see it get picked.</p>
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
@@ -266,7 +266,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="keywords">Keyword Responses</h2>
+<h2 id="keywords" data-bot="kit">Keyword Responses</h2>
 <p>The AI bot automatically responds when it hears certain words in chat.</p>
 
 <table>
@@ -277,7 +277,7 @@
 </table>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<h2 id="bot-features">Automatic Bot Features</h2>
+<h2 id="bot-features" data-bot="kit">Automatic Bot Features</h2>
 <p>These happen automatically — no commands needed.</p>
 
 <table>
@@ -291,5 +291,6 @@
 
 <p class="footer">All stream tools custom-built and self-hosted &mdash; <a href="https://cobrahjh.github.io/">Hive</a></p>
 
+<script src="bot-states.js"></script>
 </body>
 </html>
