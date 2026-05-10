@@ -90,6 +90,7 @@
       overflow: hidden;
     }
     .section-card.hidden { display: none; }
+    .section-card.is-offline { border-left: 3px solid hsl(0 90% 55%); }
     .section-card-header {
       display: flex; align-items: center; gap: 12px;
       padding: 0.95rem 1.15rem;
@@ -424,6 +425,9 @@
       span.title = bot.label + ': ' + STATE[state].tip;
       el.appendChild(document.createTextNode(' '));
       el.appendChild(span);
+
+      const card = el.closest('.section-card');
+      if (card) card.classList.toggle('is-offline', state !== 'online');
     });
 
     renderStatusBanner(bots);
