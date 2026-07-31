@@ -186,12 +186,12 @@
 
 <p class="top-link"><a href="#top">back to top</a></p>
 <h2 id="music" data-bot="music-bot">Music Commands</h2>
-<p>Request songs, control playback, and manage the music queue. Songs play on stream via YouTube.</p>
+<p>Request songs, control playback, and manage the music queue. Searches check the stream's own music library first, and fall back to YouTube when there is no match there.</p>
 
 <table>
   <tr><th>Command</th><th>Usage</th><th>Description</th></tr>
-  <tr><td><code>!play</code></td><td><code>!play lofi hip hop</code></td><td>Search YouTube and play a song (or resume playback)</td></tr>
-  <tr><td><code>!queue</code> / <code>!sr</code> / <code>!request</code></td><td><code>!queue chill beats</code></td><td>Search and add a song to the queue</td></tr>
+  <tr><td><code>!play</code></td><td><code>!play lofi hip hop</code></td><td>Search the library, then YouTube, and play a song (or resume playback)</td></tr>
+  <tr><td><code>!queue</code> / <code>!sr</code> / <code>!request</code></td><td><code>!queue chill beats</code></td><td>Search the library, then YouTube, and add a song to the queue</td></tr>
   <tr><td><code>!song</code> / <code>!np</code> / <code>!nowplaying</code></td><td><code>!song</code></td><td>Show what's currently playing</td></tr>
   <tr><td><code>!skip</code> / <code>!next</code> / <code>!nextsong</code></td><td><code>!skip</code></td><td>Skip to next track</td></tr>
   <tr><td><code>!prev</code></td><td><code>!prev</code></td><td>Restart current track. Press again within 3s to go to the previous track.</td></tr>
