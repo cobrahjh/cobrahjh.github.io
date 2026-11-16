@@ -447,9 +447,8 @@
     } catch (_) {}
     return null;
   }
-  // The snapshot is written once a minute, and only while the operator is logged on to the
-  // stream PC. One more than 15 minutes from this device's clock, or with no readable time,
-  // says nothing about now: show no badges rather than old ones.
+  // The snapshot is written once a minute. One more than 15 minutes from this device's clock,
+  // or with no readable time, says nothing about now: show no badges rather than old ones.
   const MAX_STATE_AGE_MS = 15 * 60 * 1000;
   async function load() {
     const data = await fetchStates();
