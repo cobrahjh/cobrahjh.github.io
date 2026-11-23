@@ -178,10 +178,11 @@
   function buildCards() {
     const headers = Array.from(document.querySelectorAll('h2[id]'));
     headers.forEach(h2 => {
-      // Collect siblings until next h2[id] or end of parent
+      // Collect siblings until next h2[id] or end of parent. The AI label (hive-ai-label.js) is the
+      // page's last line, not part of the last section: folded into a collapsed card nobody sees it.
       const content = [];
       let n = h2.nextElementSibling;
-      while (n && !(n.tagName === 'H2' && n.id)) {
+      while (n && !(n.tagName === 'H2' && n.id) && !n.hasAttribute('data-hive-ai-label')) {
         content.push(n);
         n = n.nextElementSibling;
       }
